@@ -1,15 +1,20 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "v2.exercisedb.io",
+        pathname: "/image/**",
+      },
+    ],
+  },
   async rewrites() {
     return [
-      {
-        source: "/api/:path*",
-        destination: "http://localhost:5000/:path*", // Proxy requests to Node.js backend
-      },
+      { source: "/api/bodyParts", destination: "http://localhost:5000/bodyParts" },
     ];
   },
-  pageExtensions: ["tsx", "ts"], // ✅ Ensures Next.js recognizes TypeScript pages in /pages
 };
 
 export default nextConfig;
