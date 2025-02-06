@@ -10,7 +10,7 @@ export async function GET() {
     }
 
     const data = await response.json();
-    console.log("✅ Fetched exercises:", data);
+    console.log("✅ Fetched exercises:");
 
     return NextResponse.json(data);
   } catch (error) {
