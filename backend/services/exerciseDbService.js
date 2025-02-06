@@ -11,9 +11,9 @@ const __dirname = dirname(__filename);
 dotenv.config({ path: `${__dirname}/../.env` });
 
 const API_BASE_URL = "https://exercisedb.p.rapidapi.com";  // API Base URL
-const RAPIDAPI_KEY = "8835cf8906mshff0f5f50df42e89p1aba33jsne8c4828e5959";  // API Key
+const RAPIDAPI_KEY = process.env.RAPIDAPI_KEY;  // API Key
 
-console.log("🚀 Using RapidAPI Key:", RAPIDAPI_KEY);
+// console.log("🚀 Using RapidAPI Key:", RAPIDAPI_KEY);
 
 const exerciseDbService = {
   async getAllExercises() {
